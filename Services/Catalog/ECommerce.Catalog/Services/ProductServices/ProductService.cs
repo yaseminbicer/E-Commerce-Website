@@ -9,16 +9,16 @@ namespace ECommerce.Catalog.Services.ProductServices
     public class ProductService:IProductService
     {
         private readonly IMapper _mapper;
-        
+
+        private readonly IMongoCollection<Product> _productCollection;
         public ProductService(IMapper mapper,IDatabaseSettings _databaseSettings) 
         {
             var client = new MongoClient(_databaseSettings.ConnectionString);
             var database = client.GetDatabase(_databaseSettings.DatabaseName);
-            _productCollection = database.GetCollection<Product>(_databaseSettings.ProductDetailCollectionName);
+            _productCollection = database.GetCollection<Product>(_databaseSettings.ProductCollectionName);
             _mapper = mapper;
         }
-        private readonly IMongoCollection<Product> _productCollection;
-
+      
         public async Task CreateProductAsync(CreateProductDto createProductDto)
         {
             var values=_mapper.Map<Product>(createProductDto);
