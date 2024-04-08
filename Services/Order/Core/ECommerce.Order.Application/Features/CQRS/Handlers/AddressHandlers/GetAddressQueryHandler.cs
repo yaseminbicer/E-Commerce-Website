@@ -28,7 +28,6 @@ namespace ECommerce.Order.Application.Features.CQRS.Handlers.AddressHandlers
                 District = x.District,
                 UserId = x.UserId,
 
-
             }).ToList();
         }
     }
