@@ -13,6 +13,12 @@ namespace ECommerce.Order.Persistence.Repositories
     public class Repository<T>:IRepository<T> where T : class
     {
         private readonly OrderContext _context;
+
+        public Repository(OrderContext context)
+        {
+            _context = context;
+        }
+
         public async Task CreateAsync(T entity)
         {
             _context.Set<T>().Add(entity);
