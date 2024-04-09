@@ -26,7 +26,7 @@ namespace ECommerce.Order.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOrderingById(int id)
         {
-            var values =await _mediator.Send(new GetAddressByIdQuery(id));
+            var values =await _mediator.Send(new GetOrderingByIdQuery(id));
             return Ok(values);
         }
         [HttpPost]
