@@ -68,7 +68,7 @@ namespace ECommerce.IdentityServer
                     ClientId="ECommerceAdminId",
                     ClientName="E-Commerce Admin User",
                     AllowedGrantTypes=GrantTypes.ClientCredentials,
-                    ClientSecrets={new Secret("ECommercesecret()")},
+                    ClientSecrets={new Secret("ECommercesecret".Sha256())},
                     AllowedScopes={ "CatalogFullPermission","CatalogReadPermission","DiscountFullPermission","OrderFullPermission" ,
                     IdentityServerConstants.LocalApi.ScopeName,
                     IdentityServerConstants.StandardScopes.Email,
