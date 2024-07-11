@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Cargo.DataAccessLayer.Abstract
 {
-    internal interface ICargoCustomerDal : IGenericDal<CargoCustomer>
+    public interface ICargoCustomerDal : IGenericDal<CargoCustomer>
     {
     }
 }

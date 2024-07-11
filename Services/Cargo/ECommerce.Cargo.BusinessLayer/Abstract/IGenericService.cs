@@ -10,7 +10,7 @@ namespace ECommerce.Cargo.BusinessLayer.Abstract
     {
         void TInsert(T entity);
         void TUpdate(T entity);
-        void TDelete(T entity);
+        void TDelete(int id);
         T TGetById(int id);
         List<T> TGetAll();
 
